@@ -325,3 +325,7 @@
 　　2.画像の上下に黒幕を付与できるようにする
 　　3.キャプションを画像の所定の位置に合成できるようにする
 　　4.アウトプットをダウンロードできるようにフロントエンドへ返却できるようにする
+
+## ■画面遷移図
+
+　https://www.figma.com/design/NysRwuSwSiN9hdCMWurTVb/WebApp_CaptionPhoto_UIDesign?node-id=0-1&p=f&t=fS7QpsT0fe8aNEPx-0
