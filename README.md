@@ -164,8 +164,7 @@
 　それと同じように写真の画角を加工し、キャプションを合成するとそのような効果が同様に生じると思います。
 
 　以下はアウトプットのイメージです。
-　![CaptionPhoto_sample1](https://gyazo.com/65f2ad7d7facae3189cf39fe35bf05a4)
-
+　https://gyazo.com/65f2ad7d7facae3189cf39fe35bf05a4
 
 - 効果
 
@@ -328,4 +327,22 @@
 
 ## ■画面遷移図
 
-　https://www.figma.com/design/NysRwuSwSiN9hdCMWurTVb/WebApp_CaptionPhoto_UIDesign?node-id=0-1&p=f&t=fS7QpsT0fe8aNEPx-0
+### [MVPリリース]
+
+- SP
+https://www.figma.com/design/NysRwuSwSiN9hdCMWurTVb/WebApp_CaptionPhoto_UIDesign?node-id=74-711&p=f&t=DP5ByPBfWkWWjrcU-0
+
+- PC
+https://www.figma.com/design/NysRwuSwSiN9hdCMWurTVb/WebApp_CaptionPhoto_UIDesign?node-id=74-503&p=f&t=DP5ByPBfWkWWjrcU-0
+
+### [本リリース]
+
+- SP
+https://www.figma.com/design/NysRwuSwSiN9hdCMWurTVb/WebApp_CaptionPhoto_UIDesign?node-id=17-67&p=f&t=DP5ByPBfWkWWjrcU-0
+
+- PC
+https://www.figma.com/design/NysRwuSwSiN9hdCMWurTVb/WebApp_CaptionPhoto_UIDesign?node-id=62-134&p=f&t=DP5ByPBfWkWWjrcU-0
+
+## ■ER図
+
+https://gyazo.com/8069a42f9d2fe4d89ab852b722104b7a
