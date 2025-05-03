@@ -100,8 +100,7 @@ production:
     <<: *primary_production
     database: myapp_production_cable
     migrations_paths: db/cable_migrate
+    # Action Cable 用の接続先を同じ URL に向ける
+    url: <%= ENV["DATABASE_URL"] %>
   # Render の環境変数 DATABASE_URL を使う
   url: <%= ENV["DATABASE_URL"] %>
-  # Action Cable 用の接続先を同じ URL に向ける
-  cable:
-    url: <%= ENV["DATABASE_URL"] %>
