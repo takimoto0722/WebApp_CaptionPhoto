@@ -88,6 +88,8 @@ production:
     url: <%= ENV["DATABASE_URL"] %>
 
   queue:
-    <<: *prod   # 1 行で OK
+    <<: *prod
   cable:
-    <<: *prod   # 1 行で OK
+    <<: *prod
+  cache:
+    <<: *prod
