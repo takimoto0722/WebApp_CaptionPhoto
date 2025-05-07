@@ -1,0 +1,29 @@
+<%# app/views/shared/_header.html.erb %>
+<nav data-controller="menu" class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- タイトル -->
+    <%= link_to "ウソ写真", root_path, class: "navbar-brand" %>
+
+    <!-- 開くボタン -->
+    <button type="button"
+            data-action="click->menu#toggle"
+            data-menu-target="icon"
+            class="menu-button border-0 bg-transparent">
+      <span class="menu-icon"></span>
+    </button>
+  </div>
+
+  <!-- メニュー本体 -->
+  <div data-menu-target="panel" class="menu-panel position-fixed top-0 end-0 vh-100 bg-white shadow">
+    <!-- 閉じるボタン -->
+    <button type="button"
+            class="btn-close m-3 ms-auto d-block"
+            data-action="click->menu#toggle"
+            aria-label="Close menu"></button>
+
+    <ul class="list-unstyled p-3">
+    <!-- リンクを設定 -->
+   
+    </ul>
+  </div>
+</nav>
