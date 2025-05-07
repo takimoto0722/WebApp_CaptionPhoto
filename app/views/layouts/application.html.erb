@@ -23,6 +23,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'shared/header' %>
+    <main class="py-4">
+      <%= yield %>
+    </main>
+  <%= render 'shared/footer' %>
+
   </body>
 </html>
