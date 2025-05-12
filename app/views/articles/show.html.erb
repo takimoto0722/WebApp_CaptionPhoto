@@ -1,0 +1,14 @@
+<!-- app/views/articles/show.html.erb -->
+<article class="article-detail">
+  <h1><%= @article.title %></h1>
+  <p class="date"><%= @article.published_on.strftime("%Y/%m/%d") %></p>
+  <% if @article.thumbnail? %>
+    <div class="thumbnail">
+      <%= image_tag @article.thumbnail.url, alt: @article.title %>
+    </div>
+  <% end %>
+  <div class="body">
+    <%= simple_format(@article.body) %>
+  </div>
+  <%= link_to '一覧に戻る', articles_path, class: "back-link" %>
+</article>

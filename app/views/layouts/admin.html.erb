@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin - <%= content_for?(:title) ? yield(:title) : 'Dashboard' %></title>
+  <%= csrf_meta_tags %><%= csp_meta_tag %>
+  <%= stylesheet_link_tag :app, "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+</head>
+<body>
+  <nav>
+    <%= link_to 'ホーム', root_path %> |
+    <%= link_to '記事一覧', admin_articles_path %> |
+    <%= link_to 'サインアウト', destroy_user_session_path, method: :delete %>
+  </nav>
+  <main class="p-4"><%= yield %></main>
+  <footer>&copy; <%= Time.current.year %> Myapp</footer>
+</body>
+</html>

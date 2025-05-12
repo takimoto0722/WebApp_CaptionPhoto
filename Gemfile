@@ -42,8 +42,15 @@ gem "thruster", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# 画像保存機能および画像加工機能を追加
 gem 'carrierwave'
 gem 'mini_magick'
+
+# 認証機能を追加
+gem 'devise'
+
+# ページネーションを追加
+gem 'kaminari'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
