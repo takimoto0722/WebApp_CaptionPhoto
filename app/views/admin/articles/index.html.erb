@@ -1,0 +1,24 @@
+<% content_for :title, "記事一覧" %>
+
+<h1>記事一覧</h1>
+<%= link_to '新規作成', new_admin_article_path %>
+<table>
+  <thead>
+    <tr><th>公開日</th><th>サムネ</th><th>タイトル</th><th></th></tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |a| %>
+      <tr>
+        <td><%= a.published_on %></td>
+        <td><%= image_tag a.thumbnail.url, width: 100 if a.thumbnail? %></td>
+        <td><%= a.title %></td>
+        <td>
+          <%= link_to '詳細', admin_article_path(a) %> |
+          <%= link_to '編集', edit_admin_article_path(a) %> |
+          <%= link_to '削除', admin_article_path(a), method: :delete, data: { confirm: '本当？' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @articles %>

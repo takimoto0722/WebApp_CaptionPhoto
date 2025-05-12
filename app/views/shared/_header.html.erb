@@ -22,8 +22,35 @@
             aria-label="Close menu"></button>
 
     <ul class="list-unstyled p-3">
-    <!-- リンクを設定 -->
-   
+      <!-- 公開ページへのリンク -->
+      <li class="mb-2">
+        <%= link_to "TOP", root_path, class: "text-decoration-none text-dark" %>
+      </li>
+      <li class="mb-2">
+        <%= link_to "記事一覧", articles_path, class: "text-decoration-none text-dark" %>
+      </li>
+
+      <% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <!-- 管理画面リンク（Adminユーザーのみ） -->
+          <li class="mb-2">
+            <%= link_to "管理画面", admin_articles_path, class: "text-decoration-none text-dark" %>
+          </li>
+        <% end %>
+
+        <!-- ログアウト -->
+        <li class="mb-2">
+          <%= link_to "ログアウト", destroy_user_session_path,
+                      method: :delete,
+                      data: { confirm: "本当にログアウトしますか？" },
+                      class: "text-decoration-none text-dark" %>
+        </li>
+      <% else %>
+        <!-- ログイン -->
+        <li class="mb-2">
+          <%= link_to "ログイン", new_user_session_path, class: "text-decoration-none text-dark" %>
+        </li>
+      <% end %>
     </ul>
   </div>
 </nav>
