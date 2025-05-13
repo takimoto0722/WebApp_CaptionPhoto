@@ -21,14 +21,14 @@ class ProcessedImageUploader < CarrierWave::Uploader::Base
       # 1. アスペクト比 2.35:1 にトリミング（横幅800固定）
       img.combine_options do |c|
         c.resize "#{target_width}x#{target_height}^"
-        c.gravity 'center'
+        c.gravity "center"
         c.crop "#{target_width}x#{target_height}+0+0"
       end
 
       # 2. 黒幕を上下に付与（上下それぞれ50固定）
       img.combine_options do |c|
-        c.gravity 'center'
-        c.background 'black'
+        c.gravity "center"
+        c.background "black"
         c.extent "#{target_width}x#{final_height}"
       end
 
@@ -39,8 +39,8 @@ class ProcessedImageUploader < CarrierWave::Uploader::Base
         quoted_caption = "“#{model.caption}”".gsub("'", "\\\\'")
 
         img.combine_options do |c|
-          c.gravity 'south'
-          c.fill 'white'
+          c.gravity "south"
+          c.fill "white"
           c.pointsize 24
           c.font font_path.to_s  # ← ここで .ttf ファイルを明示指定
           c.draw "text 0,20 '#{quoted_caption}'"
