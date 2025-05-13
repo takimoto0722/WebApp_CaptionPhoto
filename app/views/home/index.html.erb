@@ -1,14 +1,75 @@
-<div class="carousel" data-controller="carousel">
-
+<div>
+  <h1 class="display-3 mb-5">ウソ写真</h1>
 </div>
 
-<div class="home-text">
-  <h1>ウソ写真</h1>
-  <p>これはテキストです。…</p>
-  <p>これはテキストです。…</p>
-  <p>これはテキストです。…</p>
+<div>
+  <h2>作例🎉</h2>
 </div>
 
-<div class="home-create-btn">
+<div id="homeCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+  <div class="carousel-inner">
+    <!-- インジケーター -->
+    <div class="carousel-indicators">
+      <button type="button"
+              data-bs-target="#homeCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"></button>
+      <button type="button"
+              data-bs-target="#homeCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+      <button type="button"
+              data-bs-target="#homeCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-item active">
+      <%= image_tag "/uploads/sample/sample1.jpg", class: "d-block w-100", alt: "スライド1" %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "/uploads/sample/sample2.jpg", class: "d-block w-100", alt: "スライド2" %>
+    </div>
+    <div class="carousel-item">
+      <%= image_tag "/uploads/sample/sample3.jpg", class: "d-block w-100", alt: "スライド3" %>
+    </div>
+  </div>
+</div>
 
+<div>
+  <p class="fs-5">
+    写真は語らない<br>
+    もっともらしくふるまう<br>
+    それっぽく見せることは得意なようだ
+  </p>
+
+  <p class="fs-5">
+    どこまで意図してどこから偶然か<br>
+    わからないまま置いてけぼり
+  </p>
+
+  <p class="fs-5">
+    うまいことやるね、憎いね！
+  </p>
+
+  <p class="fs-5">
+    だったらそれを逆手にとって<br>
+    「写真」を利用して「ウソ」を<br>
+    でっちあげてみてはどうだろう
+  </p>
+
+  <p class="fs-5">
+    写真への愛着と反発と<br>
+    ちょっとしたいたずら心で
+  </p>
+
+  <p class="fs-5">
+    意味ありげな一コマのように<br>
+    思いがけないアクシデントのように✨️
+  </p>
+</div>
+
+<div class=" text-center my-4">
+  <%= render "shared/button", label: "Create", path: new_archive_path %>
 </div>

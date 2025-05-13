@@ -4,7 +4,7 @@
     <li class="article-item">
       <%= link_to article_path(article) do %>
         <% if article.thumbnail? %>
-          <%= image_tag article.thumbnail.url, alt: article.title, class: "thumb" %>
+          <%= image_tag article.thumbnail.url, alt: article.title, class: "thumb img-fluid" %>
         <% end %>
         <h2><%= article.title %></h2>
         <p class="date"><%= article.published_on.strftime("%Y/%m/%d") %></p>
