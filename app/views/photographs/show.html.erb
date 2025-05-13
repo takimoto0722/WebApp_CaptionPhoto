@@ -1,0 +1,11 @@
+<h1>Photograph ##<%= @photograph.id %></h1>
+
+<% if @photograph.image? %>
+  <div>
+    <%= image_tag @photograph.image.url %>
+  </div>
+<% end %>
+
+<p><strong>Caption:</strong> <%= @photograph.caption %></p>
+
+<%= link_to 'New Upload', new_photograph_path %>
