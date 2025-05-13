@@ -1,30 +1,16 @@
 <div>
-  <h1 class="display-3 mb-5">ウソ写真</h1>
+  <h1 class="display-3 my-5">ウソ写真
+  <small class="text-muted d-block">（Caption Photo）</small>
+  </h1>
 </div>
 
 <div>
-  <h2>作例🎉</h2>
+  <h2 class="my-4">作例🎉</h2>
 </div>
 
-<div id="homeCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+<div id="homeCarousel" class="carousel slide position-relative" data-bs-ride="carousel" data-bs-interval="5000">
+  <!-- カルーセル 画像 -->
   <div class="carousel-inner">
-    <!-- インジケーター -->
-    <div class="carousel-indicators">
-      <button type="button"
-              data-bs-target="#homeCarousel"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"></button>
-      <button type="button"
-              data-bs-target="#homeCarousel"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"></button>
-      <button type="button"
-              data-bs-target="#homeCarousel"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"></button>
-    </div>
     <div class="carousel-item active">
       <%= image_tag "/uploads/sample/sample1.jpg", class: "d-block w-100", alt: "スライド1" %>
     </div>
@@ -35,41 +21,60 @@
       <%= image_tag "/uploads/sample/sample3.jpg", class: "d-block w-100", alt: "スライド3" %>
     </div>
   </div>
+ <!-- ここから配置はHTMLで -->
+  <div class="carousel-indicators">
+    <button type="button"
+            data-bs-target="#homeCarousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-label="Slide 1">
+    </button>
+    <button type="button"
+            data-bs-target="#homeCarousel"
+            data-bs-slide-to="1"
+            aria-label="Slide 2">
+    </button>
+    <button type="button"
+            data-bs-target="#homeCarousel"
+            data-bs-slide-to="2"
+            aria-label="Slide 3">
+    </button>
+  </div>
 </div>
 
 <div>
-  <p class="fs-5">
+  <p class="fs-5 lh-lg my-4">
     写真は語らない<br>
     もっともらしくふるまう<br>
     それっぽく見せることは得意なようだ
   </p>
 
-  <p class="fs-5">
+  <p class="fs-5 lh-lg mb-4">
     どこまで意図してどこから偶然か<br>
     わからないまま置いてけぼり
   </p>
 
-  <p class="fs-5">
+  <p class="fs-5 lh-lg mb-4">
     うまいことやるね、憎いね！
   </p>
 
-  <p class="fs-5">
+  <p class="fs-5 lh-lg mb-4">
     だったらそれを逆手にとって<br>
     「写真」を利用して「ウソ」を<br>
     でっちあげてみてはどうだろう
   </p>
 
-  <p class="fs-5">
+  <p class="fs-5 lh-lg mb-4">
     写真への愛着と反発と<br>
     ちょっとしたいたずら心で
   </p>
 
-  <p class="fs-5">
+  <p class="fs-5 lh-lg my-4">
     意味ありげな一コマのように<br>
     思いがけないアクシデントのように✨️
   </p>
 </div>
 
 <div class=" text-center my-4">
-  <%= render "shared/button", label: "Create", path: new_archive_path %>
+  <%= render "shared/button", label: "Create", path: new_photograph_path %>
 </div>

@@ -1,0 +1,23 @@
+#homeCarousel .carousel-indicators {
+  position: relative;         
+}
+
+.carousel-indicators [data-bs-target] {
+  /* 一個ずつの見た目調整はこれでOK */
+  width: auto !important;
+  height: auto !important;
+  margin: 0 0.3rem !important;
+  background: transparent !important;
+  text-indent: 0 !important;
+  opacity: 1 !important;
+}
+
+.carousel-indicators [data-bs-target]::before {
+  content: '・' !important;
+  font-size: 2rem !important;
+  color: rgba(255,255,255,0.4) !important;
+}
+
+.carousel-indicators [data-bs-target].active::before {
+  color: #fff !important;
+}
