@@ -1,9 +1,5 @@
-<%# app/views/shared/_header.html.erb %>
-<nav data-controller="menu" class="navbar navbar-dark bg-dark">
-  <div class="container-fluid">
-    <!-- タイトル -->
-    <%= link_to "ウソ写真", root_path, class: "navbar-brand" %>
-
+<nav data-controller="menu" class="navbar navbar-dark bg-transparent sticky-top">
+  <div class="container-fluid justify-content-end">
     <!-- 開くボタン -->
     <button type="button"
             data-action="click->menu#toggle"
@@ -24,17 +20,20 @@
     <ul class="list-unstyled p-3">
       <!-- 公開ページへのリンク -->
       <li class="mb-2">
-        <%= link_to "TOP", root_path, class: "text-decoration-none text-dark" %>
+        <%= link_to "TOP", root_path, class: "text-decoration-none text-dark fs-5" %>
       </li>
       <li class="mb-2">
-        <%= link_to "記事一覧", articles_path, class: "text-decoration-none text-dark" %>
+        <%= link_to "Create Caption Photo", new_photograph_path, class: "text-decoration-none text-dark fs-5 mb-4" %>
+      </li>
+      <li class="mb-2">
+        <%= link_to "写真について", articles_path, class: "text-decoration-none text-dark fs-5 mb-4" %>
       </li>
 
       <% if user_signed_in? %>
         <% if current_user.admin? %>
           <!-- 管理画面リンク（Adminユーザーのみ） -->
           <li class="mb-2">
-            <%= link_to "管理画面", admin_articles_path, class: "text-decoration-none text-dark" %>
+            <%= link_to "管理画面", admin_articles_path, class: "text-decoration-none text-dark fs-5 mb-4" %>
           </li>
         <% end %>
 
@@ -43,12 +42,12 @@
           <%= link_to "ログアウト", destroy_user_session_path,
                       method: :delete,
                       data: { confirm: "本当にログアウトしますか？" },
-                      class: "text-decoration-none text-dark" %>
+                      class: "text-decoration-none text-dark fs-5 mb-4" %>
         </li>
       <% else %>
         <!-- ログイン -->
         <li class="mb-2">
-          <%= link_to "ログイン", new_user_session_path, class: "text-decoration-none text-dark" %>
+          <%= link_to "ログイン", new_user_session_path, class: "text-decoration-none text-dark fs-5 mb-4" %>
         </li>
       <% end %>
     </ul>
