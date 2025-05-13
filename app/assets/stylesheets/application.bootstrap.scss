@@ -1,43 +1,57 @@
+// ─── ①Bootstrap 変数をダーク用に上書き ───
+$body-bg:    #171710 !default;
+$body-color: #D9D9D9 !default;
+
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import "fonts";
 
 // カスタムフォントの登録
 
-
 // メニューアイコンのスタイル
 .menu-icon {
-    display: block;
-    width: 24px; height: 24px;
-    background-size: 24px 24px;
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAzMiAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48bGluZSB5MT0iMC41IiB4Mj0iMzIiIHkyPSIwLjUiIHN0cm9rZT0iI0Q5RDlEOSIvPjxsaW5lIHkxPSI4LjUiIHgyPSIzMiIgeTI9IjguNSIgc3Ryb2tlPSIjRDlEOUQ5Ii8+PGxpbmUgeTE9IjE2LjUiIHgyPSIzMiIgeTI9IjE2LjUiIHN0cm9rZT0iI0Q5RDlEOSIvPjwvc3ZnPg==");
-    cursor: pointer;
-  }
-  
+  display: block;
+  width: 24px; height: 24px;
+  background-size: 24px 24px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMTciIHZpZXdCb3g9IjAgMCAzMiAxNyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48bGluZSB5MT0iMC41IiB4Mj0iMzIiIHkyPSIwLjUiIHN0cm9rZT0iI0Q5RDlEOSIvPjxsaW5lIHkxPSI4LjUiIHgyPSIzMiIgeTI9IjguNSIgc3Ryb2tlPSIjRDlEOUQ5Ii8+PGxpbmUgeTE9IjE2LjUiIHgyPSIzMiIgeTI9IjE2LjUiIHN0cm9rZT0iI0Q5RDlEOSIvPjwvc3ZnPg==");
+  cursor: pointer;
+}
+
 .menu-icon.active {
-    background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNSAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48bGluZSB4MT0iMS4zNTM1NSIgeTE9IjAuNjQ2NDQ3IiB4Mj0iMjMuOTgxIiB5Mj0iMjMuMjczOSIgc3Ryb2tlPSIjMTcxNzEwIi8+PGxpbmUgeDE9IjAuNjQ2NDQ3IiB5MT0iMjMuNjQ2NCIgeDI9IjIzLjI3MzkiIHkyPSIxLjAxOTAzIiBzdHJva2U9IiMxNzE3MTAiLz48L3N2Zz4=") !important;
-  }
-  
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjUiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNSAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48bGluZSB4MT0iMS4zNTM1NSIgeTE9IjAuNjQ2NDQ3IiB4Mj0iMjMuOTgxIiB5Mj0iMjMuMjczOSIgc3Ryb2tlPSIjMTcxNzEwIi8+PGxpbmUgeDE9IjAuNjQ2NDQ3IiB5MT0iMjMuNjQ2NCIgeDI9IjIzLjI3MzkiIHkyPSIxLjAxOTAzIiBzdHJva2U9IiMxNzE3MTAiLz48L3N2Zz4=") !important;
+}
+
 // メニュー本体の開閉スタイル指定
 .menu-panel {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 250px;       /* お好みの幅に */
-    height: 100vh;
-    background: #fff;
-    box-shadow: -4px 0 8px rgba(0,0,0,0.1);
-    transform: translateX(100%);
-    transition: none;    /* 即時表示/非表示 */
-    z-index: 1100;
-    /* pointer-events: none; だとクリックできなくなるので不要です */
-  }
-  
-  .menu-panel.open {
-    transform: translateX(0);
-  }
-  
-  // 閉じるボタンを前面に
-  .menu-panel .btn-close {
-    z-index: 1101;
-  }
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 250px;       /* お好みの幅に */
+  height: 100vh;
+  background: #fff;
+  box-shadow: -4px 0 8px rgba(0,0,0,0.1);
+  transform: translateX(100%);
+  transition: none;    /* 即時表示/非表示 */
+  z-index: 1100;
+}
+
+.menu-panel.open {
+  transform: translateX(0);
+}
+
+// 閉じるボタンを前面に
+.menu-panel .btn-close {
+  z-index: 1101;
+}
+
+
+
+// ─── グレイ背景＋黒文字のボタン用クラス ───
+.btn-gray-black {
+  @include button-variant(#D9D9D9, #000000); // BootstrapのボタンMixinを利用
+  border: none;
+}
+
+.btn-gray-black:hover {
+  background-color: darken(#D9D9D9, 5%) !important;
+}
