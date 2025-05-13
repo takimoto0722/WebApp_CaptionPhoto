@@ -6,5 +6,5 @@ class ThumbnailUploader < CarrierWave::Uploader::Base
   end
 
   # 横幅800pxにリサイズ
-  process resize_to_limit: [800, nil]
+  process resize_to_limit: [ 800, nil ]
 end

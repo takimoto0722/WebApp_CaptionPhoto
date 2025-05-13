@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'home#index'
+  root "home#index"
   # resources :archives, only: %i[new create show]
   resources :photographs, only: %i[new create show]
 

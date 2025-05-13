@@ -7,15 +7,15 @@ class Admin::ArticlesController < Admin::BaseController
 
   def show
   end
-  
-  def new  
+
+  def new
     @article = Article.new
   end
 
   def create
     @article = Article.new(article_params)
     if @article.save
-      redirect_to admin_articles_path, notice: '記事を作成しました'
+      redirect_to admin_articles_path, notice: "記事を作成しました"
     else
       render :new
     end
@@ -26,7 +26,7 @@ class Admin::ArticlesController < Admin::BaseController
 
   def update
     if @article.update(article_params)
-      redirect_to admin_articles_path, notice: '記事を更新しました'
+      redirect_to admin_articles_path, notice: "記事を更新しました"
     else
       render :edit
     end
@@ -34,7 +34,7 @@ class Admin::ArticlesController < Admin::BaseController
 
   def destroy
     @article.destroy
-    redirect_to admin_articles_path, notice: '記事を削除しました'
+    redirect_to admin_articles_path, notice: "記事を削除しました"
   end
 
   private
