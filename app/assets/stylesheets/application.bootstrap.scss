@@ -1,4 +1,4 @@
-// ─── ①Bootstrap 変数をダーク用に上書き ───
+// Bootstrap 変数をダーク用に上書き
 $body-bg:    #171710 !default;
 $body-color: #D9D9D9 !default;
 
@@ -6,8 +6,6 @@ $body-color: #D9D9D9 !default;
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import "fonts";
 @import 'custom_carousel';
-
-// カスタムフォントの登録
 
 // メニューアイコンのスタイル
 .menu-icon {
@@ -27,13 +25,19 @@ $body-color: #D9D9D9 !default;
   position: fixed;
   top: 0;
   right: 0;
-  width: 250px;       /* お好みの幅に */
+  width: 400px;
   height: 100vh;
   background: #fff;
   box-shadow: -4px 0 8px rgba(0,0,0,0.1);
   transform: translateX(100%);
   transition: none;    /* 即時表示/非表示 */
   z-index: 1100;
+}
+// スマホ相当では全幅
+@media (max-width: 767.98px) {
+  .menu-panel {
+    width: 100% !important;
+  }
 }
 
 .menu-panel.open {
@@ -44,8 +48,6 @@ $body-color: #D9D9D9 !default;
 .menu-panel .btn-close {
   z-index: 1101;
 }
-
-
 
 // ─── グレイ背景＋黒文字のボタン用クラス ───
 .btn-gray-black {
