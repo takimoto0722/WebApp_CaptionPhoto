@@ -1,0 +1,18 @@
+<h1>New Photograph</h1>
+
+<%= form_with(model: @photograph, local: true) do |f| %>
+  <div>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+    <% if @photograph.image? %>
+      <%= image_tag @photograph.image.url, width: 200 %>
+    <% end %>
+  </div>
+  <div>
+    <%= f.label :caption %><br>
+    <%= f.text_area :caption, rows: 3 %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
