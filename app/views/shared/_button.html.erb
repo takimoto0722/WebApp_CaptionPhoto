@@ -1,1 +1,9 @@
-<%= link_to label, path, class: "fs-5 btn btn-light rounded-pill px-4 py-2" %>
+<%# 共通ボタン partial: リンク or form submit を同じデザインで出力 %>
+<% button_classes = "s-5 btn btn-light rounded-pill px-4 py-2" %>
+<% inline_style = "min-width: 85px;" %>
+
+<% if local_assigns[:submit] && local_assigns[:f] %>
+  <%= f.submit label, class: button_classes, style: inline_style %>
+<% else %>
+  <%= link_to label, path, class: button_classes, style: inline_style %>
+<% end %>
