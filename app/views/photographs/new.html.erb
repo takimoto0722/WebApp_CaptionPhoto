@@ -1,18 +1,33 @@
-<h1>New Photograph</h1>
-
-<%= form_with(model: @photograph, local: true) do |f| %>
-  <div>
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-    <% if @photograph.image? %>
-      <%= image_tag @photograph.image.url, width: 200 %>
-    <% end %>
-  </div>
-  <div>
-    <%= f.label :caption %><br>
-    <%= f.text_area :caption, rows: 3 %>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
-<% end %>
+<div>
+  <h1 class="display-3 my-5">ウソ写真
+  <small class="text-muted d-block">（Caption Photo）</small>
+  </h1>
+</div>
+<div class="container mx-auto" style="max-width: 500px;">
+  <%= form_with model: @photograph, local: true, html: { class: 'd-flex flex-column gap-4' } do |f| %>
+    <!-- 写真アップロード エリア -->
+    <div>
+      <%= f.label :image, '写真をアップロード', class: 'form-label' %>
+      <%= f.file_field :image, class: 'form-control' %>
+      <% if @photograph.image? %>
+        <div class="mt-3 text-center">
+          <!-- 写真のプレビューは未実装 -->
+          <%= image_tag @photograph.image.url, class: 'img-fluid' %>
+        </div>
+      <% end %>
+    </div>
+    <!-- キャプション入力 エリア -->
+    <div>
+      <%= f.label :caption, 'キャプション（※）を入力', class: 'form-label' %>
+      <%= f.text_area :caption, rows: 1, class: 'form-control' %>
+      <div class="text-end text-muted small">25字以内</div>
+    </div>
+    <!-- リンクボタン エリア -->
+    <div class="d-flex justify-content-evenly m-4">
+      <!-- 「Back」ボタンは shared/button partial で -->
+      <%= render "shared/button", label: "Back", path: root_path %>
+      <!-- 「Fix」ボタンは f.submit を partial 相当のクラスでスタイリング -->
+      <%= render "shared/button", label: "Fix", submit: true, f: f %>
+    </div>
+  <% end %>
+</div>
