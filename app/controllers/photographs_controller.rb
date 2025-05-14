@@ -10,7 +10,7 @@ class PhotographsController < ApplicationController
     if @photograph.save
       redirect_to @photograph
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
