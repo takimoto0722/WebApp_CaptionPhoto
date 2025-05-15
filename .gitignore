@@ -40,6 +40,12 @@
 
 # 画像保管場所
 /public/uploads/*
+
 !/public/uploads/sample/
 !/public/uploads/sample/*
+
+!/public/uploads/article/
+!/public/uploads/article/thumbnail/
+!public/uploads/article/thumnail/**/*
+
 !/public/uploads/.keep
