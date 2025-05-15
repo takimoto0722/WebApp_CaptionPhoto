@@ -40,4 +40,6 @@
 
 # 画像保管場所
 /public/uploads/*
+!/public/uploads/sample/
+!/public/uploads/sample/*
 !/public/uploads/.keep
