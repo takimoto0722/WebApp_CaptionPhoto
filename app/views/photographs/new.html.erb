@@ -18,11 +18,12 @@
     <!-- 写真アップロード エリア -->
     <div>
       <%= f.label :image, '写真をアップロード', class: 'form-label' %>
+        <small class="text-muted">（※jpgファイルのみ対応）</small>
       <%= f.file_field :image, class: 'form-control' %>
     </div>
     <!-- キャプション入力 エリア -->
     <div>
-      <%= f.label :caption, 'キャプション（※）を入力', class: 'form-label' %>
+      <%= f.label :caption, 'キャプションを入力', class: 'form-label' %>
       <%= f.text_area :caption, rows: 1, class: 'form-control' %>
       <div class="text-end text-muted small">25字以内</div>
     </div>
